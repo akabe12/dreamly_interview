@@ -11,5 +11,8 @@ public class ViewRequests {
 
     // Displays all previous requests in a table format.
 
-    // Will make a call to service/database.
+    // Make call to REST service:       /records/user/{id}
+    //          - "id" in the REST call is that of the internal user ID used in the database.
+    //          - REST service class is located under: main/java/service_system/view_request/ViewRequestController.java
+
 }

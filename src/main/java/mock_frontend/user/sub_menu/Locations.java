@@ -10,7 +10,10 @@ package main.java.mock_frontend.user.sub_menu;
 public class Locations {
 
     // Displays all saved locations in an interact-able table format.
-    //          1. Make service/database call (Required info: User ID).
+    //          1. Make service call
+    //              a. REST service call:           /location/view/{id}
+    //                  - "id" in the REST call is that of the internal user ID used in the database.
+    //                  - REST service class is located under: main/java/service_system/support/LocationController.java
     //          2. Selecting a location will allow for modification or deletion.
     //              a. Modification shows all fields.
     //              b. Option to cancel or save.

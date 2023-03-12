@@ -63,9 +63,11 @@ public class Request {
 
     /**
      * Response by the company to the active request (OPEN, REJECTED, ACCEPTED).
+     *
+     * Upon instantiation of the Request object, will be automatically set to "OPEN".
      */
     @Column(name = "status")
-    private Status status;
+    private Status status = Status.OPEN;
 
     public Request(int userId, int companyId, String vehicleInfo, Instant pickupTime, String pickupLocation,
                    String destination) {

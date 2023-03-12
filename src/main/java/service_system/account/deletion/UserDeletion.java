@@ -1,4 +1,4 @@
-package service_system.account.deletion;
+package main.java.service_system.account.deletion;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

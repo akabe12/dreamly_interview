@@ -1,5 +1,6 @@
-package dao;
+package test.java.dao;
 
+import junit.framework.TestCase;
 import org.junit.Test;
 
 /**
@@ -7,7 +8,7 @@ import org.junit.Test;
  *
  * Created by skeane on 3/2/2023.
  */
-public class UserDAOImplTest {
+public class UserDAOImplTest extends TestCase {
 
     @Test
     public void testFind() {}

@@ -1,4 +1,4 @@
-package service_system.account.creation;
+package main.java.service_system.account.creation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

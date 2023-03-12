@@ -1,6 +1,6 @@
-package service_system.account.security;
+package main.java.service_system.account.security;
 
-import service_system.hibernate.dao.UserDAO;
+import main.java.service_system.common.hibernate.dao.UserDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,9 +75,6 @@ public class PasswordVerifier {
 
             return factory.generateSecret(spec).getEncoded();
         } catch (Exception ex) {
-            // TODO: Need to have a way for a user to understand there is a fundamental flaw. If this error hits,
-            //  nothing can be done by the user. Will need to be an operational bug fix by development team.
-
             logger.error("Failure occurred generating the hash for String {} with algorithm {}", input, HASH_ALG, ex);
             return new byte[0];
         }

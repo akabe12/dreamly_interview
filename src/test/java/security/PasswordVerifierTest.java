@@ -1,10 +1,11 @@
-package security;
+package test.java.security;
 
+import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import service_system.account.security.PasswordVerifier;
-import service_system.hibernate.dao.UserDAO;
+import main.java.service_system.account.security.PasswordVerifier;
+import main.java.service_system.common.hibernate.dao.UserDAO;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
@@ -16,7 +17,7 @@ import static org.mockito.Mockito.when;
  * Created by skeane on 3/8/2023.
  */
 @RunWith()
-public class PasswordVerifierTest {
+public class PasswordVerifierTest extends TestCase {
 
     private PasswordVerifier passwordVerifier;
 

@@ -1,4 +1,4 @@
-package mock_frontend.company;
+package main.java.mock_frontend.company;
 
 /**
  * FRONTEND CLASS

@@ -1,4 +1,4 @@
-package service_system.account.creation;
+package main.java.service_system.account.creation;
 
 /**
  * Created by skeane on 3/3/2023.

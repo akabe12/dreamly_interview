@@ -1,4 +1,4 @@
-package mock_frontend.user;
+package main.java.mock_frontend.user;
 
 /**
  * FRONTEND CLASS

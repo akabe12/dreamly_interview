@@ -1,4 +1,4 @@
-package mock_frontend.user.sub_menu;
+package main.java.mock_frontend.user.sub_menu;
 
 /**
  * FRONTEND CLASS

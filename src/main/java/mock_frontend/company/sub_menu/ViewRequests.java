@@ -1,4 +1,4 @@
-package mock_frontend.company.sub_menu;
+package main.java.mock_frontend.company.sub_menu;
 
 /**
  * FRONTEND CLASS

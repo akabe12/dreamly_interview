@@ -1,4 +1,4 @@
-package service_system.account.modification;
+package main.java.service_system.account.modification;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

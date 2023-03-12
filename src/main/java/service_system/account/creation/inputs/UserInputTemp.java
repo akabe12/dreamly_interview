@@ -1,4 +1,4 @@
-package service_system.account.creation.inputs;
+package main.java.service_system.account.creation.inputs;
 
 /**
  * Temporary class to replace the frontend methods of getting inputs from the user. WILL HAVE TO BE UPDATED!!!

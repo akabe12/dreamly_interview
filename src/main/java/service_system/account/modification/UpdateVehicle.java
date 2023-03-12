@@ -1,10 +1,10 @@
-package service_system.account.modification;
+package main.java.service_system.account.modification;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import service_system.common.Make;
-import service_system.common.VehicleType;
+import main.java.service_system.common.Make;
+import main.java.service_system.common.VehicleType;
 import service_system.hibernate.Vehicle;
 import service_system.hibernate.dao.VehicleDAO;
 

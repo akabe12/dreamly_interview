@@ -1,4 +1,4 @@
-package service_system.common;
+package main.java.service_system.common;
 
 /**
  * Enum class that contains vehicle types. Used to provide consistency in the database.

@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * Contains parking information for a location saved by a user.
@@ -14,7 +15,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "location")
-public class Location {
+public class Location implements Serializable {
+    private static final long serialVersionUID = -5733341296763930689L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,6 +52,10 @@ public class Location {
         this.name = name;
         this.address = address;
         this.details = details;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getUserId() {

@@ -1,4 +1,4 @@
-package test.java.dao;
+package test.dao;
 
 import junit.framework.TestCase;
 import main.java.service_system.common.hibernate.RequestRecord;
@@ -37,7 +37,7 @@ public class RequestRecordDAOImplTest extends TestCase {
     public void testGetUserRecords() {
         int userId = 19;
 
-        requestRecordDAO.getUserRecords();
+        //requestRecordDAO.getUserRecords();
 
     }
 
@@ -45,7 +45,7 @@ public class RequestRecordDAOImplTest extends TestCase {
     public void testGetCompanyRecords() {
         int companyId = 678;
 
-        requestRecordDAO.getCompanyRecords();
+        //requestRecordDAO.getCompanyRecords();
     }
 
     @Test
@@ -54,7 +54,7 @@ public class RequestRecordDAOImplTest extends TestCase {
 
 
 
-        requestRecordDAO.removeUser(userId);
+        //requestRecordDAO.removeUser(userId);
 
 
 
@@ -64,7 +64,7 @@ public class RequestRecordDAOImplTest extends TestCase {
     public void testRemoveCompany() {
         int companyId = 333;
 
-        requestRecordDAO.removeCompany();
+        //requestRecordDAO.removeCompany();
 
 
 
@@ -76,7 +76,7 @@ public class RequestRecordDAOImplTest extends TestCase {
      * @return
      */
     private RequestRecord createRecord() {
-
+return null;
     }
 
 }

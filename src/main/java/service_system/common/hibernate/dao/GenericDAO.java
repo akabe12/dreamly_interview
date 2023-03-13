@@ -15,7 +15,7 @@ public interface GenericDAO<T> {
 
     List<T> findAll();
 
-    T create(final T entity);
+    T save(final T entity);
 
     T update(final T entity);
 

@@ -35,7 +35,7 @@ public abstract class GenericDAOImpl<T extends Serializable> implements GenericD
         return entityManager.createQuery("from " + clazz.getName()).getResultList();
     }
 
-    public T create(final T entity) {
+    public T save(final T entity) {
         entityManager.persist(entity);
         return entity;
     }
@@ -55,6 +55,6 @@ public abstract class GenericDAOImpl<T extends Serializable> implements GenericD
 
     protected EntityManager getEntityManager() {
         EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Eclipselink_JPA" );
-        EntityManager entitymanager = emfactory.createEntityManager( );
+        return emfactory.createEntityManager( );
     }
 }

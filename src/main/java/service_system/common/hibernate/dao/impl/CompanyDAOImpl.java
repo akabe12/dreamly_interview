@@ -12,7 +12,7 @@ import javax.persistence.criteria.CriteriaQuery;
 /**
  * Created by skeane on 3/2/2023.
  */
-public class CompanyDAOImpl extends GenericDAOImpl implements CompanyDAO {
+public class CompanyDAOImpl extends GenericDAOImpl<Company> implements CompanyDAO {
 
     private static final Logger logger = LoggerFactory.getLogger(CompanyDAOImpl.class);
 
@@ -23,9 +23,9 @@ public class CompanyDAOImpl extends GenericDAOImpl implements CompanyDAO {
     public byte[] getPassword(int companyId) {
         EntityManager manager = getEntityManager();
         CriteriaBuilder builder = manager.getCriteriaBuilder();
-        CriteriaQuery<byte[]> query = builder.createQuery(byte[]);
+        //CriteriaQuery<byte[]> query = builder.createQuery(byte[]);
 
-
+return new byte[0];
     }
 
     /**
@@ -44,6 +44,8 @@ public class CompanyDAOImpl extends GenericDAOImpl implements CompanyDAO {
         EntityManager manager = getEntityManager();
         CriteriaBuilder builder = manager.getCriteriaBuilder();
         CriteriaQuery<Company> query = builder.createQuery(Company.class);
+
+        return null;
     }
 
     /**

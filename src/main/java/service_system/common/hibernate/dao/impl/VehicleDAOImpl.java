@@ -1,19 +1,18 @@
 package main.java.service_system.common.hibernate.dao.impl;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Root;
 import main.java.service_system.common.hibernate.Vehicle;
 import main.java.service_system.common.hibernate.dao.VehicleDAO;
 import main.java.service_system.common.restservice.input.VehicleInfoWS;
 
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
 /**
  * Created by skeane on 3/2/2023.
  */
-public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
+public class VehicleDAOImpl extends GenericDAOImpl<Vehicle> implements VehicleDAO {
 
     /**
      * {@inheritDoc}
@@ -22,6 +21,9 @@ public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
     public List<Vehicle> findByUserId(int userId) {
         EntityManager manager = getEntityManager();
         CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Vehicle> query = builder.createQuery(Vehicle.class);
+
+        return null;
     }
 
     /**
@@ -29,7 +31,9 @@ public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
      */
     @Override
     public void update(VehicleInfoWS vehicleInfoWS) {
-
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Vehicle> query = builder.createQuery(Vehicle.class);
     }
 
     /**
@@ -37,7 +41,9 @@ public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
      */
     @Override
     public void deleteById(int vehicleId) {
-
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Vehicle> query = builder.createQuery(Vehicle.class);
     }
 
     /**
@@ -45,7 +51,9 @@ public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
      */
     @Override
     public void deleteUser(int userId) {
-
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Vehicle> query = builder.createQuery(Vehicle.class);
     }
 
     /**
@@ -53,7 +61,9 @@ public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
      */
     @Override
     public void deleteVehicle(int userId, int vehicleId) {
-
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Vehicle> query = builder.createQuery(Vehicle.class);
     }
 
     /**
@@ -64,11 +74,11 @@ public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
         int count = 0;
 
         EntityManager manager = getEntityManager();
-        CriteriaBuilder builder = manager.;
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
         CriteriaQuery<Integer> query = builder.createQuery(Integer.class);
 
-        Root<Vehicle> root = ;
-        query.select();
+        /**Root<Vehicle> root = ;
+        query.select();*/
 
 
         return count;
@@ -77,23 +87,11 @@ public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
     /**
      * {@inheritDoc}
      */
-    public void help() {
-        EntityManager manager = getEntityManager()
-        CriteriaBuilder cb = session.getCriteriaBuilder();
-        CriteriaQuery<Item> cr = cb.createQuery(Item.class);
-        Root<Item> root = cr.from(Item.class);
-        cr.select(root);
-
-        Query<Item> query = session.createQuery(cr);
-        List<Item> results = query.getResultList();
-    }
-
-
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public Vehicle save(Vehicle entity) {
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Vehicle> query = builder.createQuery(Vehicle.class);
         return null;
     }
 
@@ -102,14 +100,9 @@ public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
      */
     @Override
     public void delete(Vehicle entity) {
-
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Vehicle> query = builder.createQuery(Vehicle.class);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Vehicle findById(Long id) {
-        return null;
-    }
 }

@@ -1,32 +1,33 @@
 package main.java.service_system.common.hibernate.dao.impl;
 
-import jakarta.persistence.Query;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
 import main.java.service_system.common.hibernate.User;
 import main.java.service_system.common.hibernate.dao.UserDAO;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 /**
  * Created by skeane on 3/2/2023.
  */
-public class UserDAOImpl extends GenericDAOImpl implements UserDAO {
+public class UserDAOImpl extends GenericDAOImpl<User> implements UserDAO {
 
     /**
      * {@inheritDoc}
      */
-    byte[] String getPassword(int userId) {
-        EntityManager manager = ;
+    public byte[] getPassword(int userId) {
+        EntityManager manager = getEntityManager();
         CriteriaBuilder builder = manager.getCriteriaBuilder();
         CriteriaQuery<String> cQuery = builder.createQuery(String.class);
 
         Root<User> root = cQuery.from(User.class);
-        cQuery.where(builder.equal(User_.id, userId));
-        cQuery.select(User_.password);
+        cQuery.where(builder.equal(root.get("id"), userId));
+        cQuery.select(root.get("password"));
 
-        Query query = manager.createQuery(cQuery);
-        return query.getSingleResult(); // TODO Fix
+        TypedQuery typedQuery = manager.createQuery(cQuery);
+        return new byte[0]; // TODO Fix
     }
 
     /**
@@ -34,15 +35,9 @@ public class UserDAOImpl extends GenericDAOImpl implements UserDAO {
      */
     @Override
     public void delete(int userId) {
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public byte[] getPassword(int userId) {
-        return new byte[0];
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<String> cQuery = builder.createQuery(String.class);
     }
 
     /**
@@ -50,7 +45,9 @@ public class UserDAOImpl extends GenericDAOImpl implements UserDAO {
      */
     @Override
     public void setPassword(int userId, byte[] hashedPassword) {
-
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<String> cQuery = builder.createQuery(String.class);
     }
 
     /**
@@ -58,6 +55,11 @@ public class UserDAOImpl extends GenericDAOImpl implements UserDAO {
      */
     @Override
     public User save(User entity) {
+
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<String> cQuery = builder.createQuery(String.class);
+
         return null;
     }
 
@@ -66,14 +68,9 @@ public class UserDAOImpl extends GenericDAOImpl implements UserDAO {
      */
     @Override
     public void delete(User entity) {
-
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<String> cQuery = builder.createQuery(String.class);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public User findById(Long id) {
-        return null;
-    }
 }

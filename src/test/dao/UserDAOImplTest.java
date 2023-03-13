@@ -1,4 +1,4 @@
-package test.java.dao;
+package test.dao;
 
 import junit.framework.TestCase;
 import org.junit.Test;

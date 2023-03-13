@@ -1,12 +1,14 @@
 package main.java.service_system.common.hibernate.dao;
 
 import main.java.service_system.common.hibernate.Location;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by skeane on 3/2/2023.
  */
+@Repository
 public interface LocationDAO extends GenericDAO<Location> {
 
     /**
@@ -23,9 +25,4 @@ public interface LocationDAO extends GenericDAO<Location> {
      * @param locationId    ID of the location to be removed.
      */
     void deleteById(int locationId);
-
-    /**
-     *
-     */
-    void update();
 }

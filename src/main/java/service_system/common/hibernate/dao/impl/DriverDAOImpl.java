@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by skeane on 3/2/2023.
  */
-public class DriverDAOImpl extends GenericDAOImpl implements DriverDAO {
+public class DriverDAOImpl extends GenericDAOImpl<Driver> implements DriverDAO {
 
     /**
      * {@inheritDoc}
@@ -25,8 +25,8 @@ public class DriverDAOImpl extends GenericDAOImpl implements DriverDAO {
         CriteriaQuery<Driver> query = builder.createQuery(Driver.class);
 
         Root<Driver> root = query.from(Driver.class);
-        query.where(builder.equal(Driver_.company_id, companyId));
-        query.select(Driver);
+        query.where(builder.equal(root.get("company_id"), companyId));
+        query.select(root);
 
         TypedQuery<Driver> typedQuery = manager.createQuery(query);
         return typedQuery.getResultList();
@@ -65,6 +65,7 @@ public class DriverDAOImpl extends GenericDAOImpl implements DriverDAO {
         CriteriaBuilder builder = manager.getCriteriaBuilder();
         CriteriaQuery<Driver> query = builder.createQuery(Driver.class);
 
+        return null;
 
     }
 

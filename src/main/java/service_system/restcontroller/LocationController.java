@@ -52,7 +52,7 @@ public class LocationController {
     public void updateLocation(@RequestBody LocationInfoWS locationInfoWS) {
         logger.debug("Started [updateLocation] rest call for user ID {}.", locationInfoWS.getUserId());
 
-        locationDAO.update();
+        //locationDAO.update();
 
         logger.debug("Completed [updateLocation] rest call for user ID {}.", locationInfoWS.getUserId());
     }

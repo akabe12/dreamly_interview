@@ -41,4 +41,5 @@ public interface RequestDAO extends GenericDAO<Request> {
      */
     List<Request> getOpenRequests(int companyId);
 
+    Request findById(Long id);
 }

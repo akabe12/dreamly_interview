@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import java.io.Serializable;
 import java.time.Instant;
 
 /**
@@ -18,7 +19,7 @@ import java.time.Instant;
  */
 @Entity
 @Table(name = "record")
-public class RequestRecord {
+public class RequestRecord implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

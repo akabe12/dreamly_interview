@@ -1,9 +1,34 @@
 package main.java.service_system.common.hibernate.dao;
 
+import main.java.service_system.common.hibernate.Vehicle;
+
+import java.util.List;
+
 /**
  * Created by skeane on 3/2/2023.
  */
 public interface VehicleDAO extends GenericDAO {
+
+    /**
+     * Get all the vehicles for a provided user.
+     *
+     * @param userId    ID of the user.
+     * @return          All the vehicles for a provided user, empty list if nothing is found.
+     */
+    List<Vehicle> findByUserId(int userId);
+
+    /**
+     *
+     * @param vehicle
+     */
+    void update(Vehicle vehicle);
+
+    /**
+     * Delete the vehicle by the provided ID.
+     *
+     * @param vehicleId     ID of the vehicle to be deleted from the database.
+     */
+    void deleteById(int vehicleId);
 
     /**
      * Delete all vehicles for a user.

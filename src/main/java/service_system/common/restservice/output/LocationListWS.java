@@ -1,4 +1,4 @@
-package main.java.service_system.common.restservice;
+package main.java.service_system.common.restservice.output;
 
 import main.java.service_system.common.hibernate.Location;
 

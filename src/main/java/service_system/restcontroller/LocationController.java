@@ -1,10 +1,9 @@
-package main.java.service_system.support;
+package main.java.service_system.restcontroller;
 
 import main.java.service_system.common.hibernate.Location;
 import main.java.service_system.common.hibernate.dao.LocationDAO;
-import main.java.service_system.common.restservice.LocationInfoWS;
-import main.java.service_system.common.restservice.LocationListWS;
-import main.java.service_system.common.restservice.RequestInfoWS;
+import main.java.service_system.common.restservice.input.LocationInfoWS;
+import main.java.service_system.common.restservice.output.LocationListWS;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sun.reflect.annotation.TypeAnnotation;
 
-import javax.ws.rs.Path;
 import java.util.List;
 
 /**
@@ -47,7 +44,12 @@ public class LocationController {
         return new LocationListWS(locationList);
     }
 
-    @PostMapping("/modify/{id}")
+    /**
+     * Update the location with the updated fields.
+     *
+     * @param locationInfoWS        Updated fields for the location.
+     */
+    @PostMapping("/modify")
     public void updateLocation(@RequestBody LocationInfoWS locationInfoWS) {
         logger.debug("Started [updateLocation] rest call for user ID {}.", locationInfoWS.getUserId());
 
@@ -56,7 +58,12 @@ public class LocationController {
         logger.debug("Completed [updateLocation] rest call for user ID {}.", locationInfoWS.getUserId());
     }
 
-    @PostMapping("/add/{id}")
+    /**
+     * Adding a new location to the database for a user.
+     *
+     * @param locationInfoWS    Wrapper class with the location information.
+     */
+    @PostMapping("/add")
     public void addLocation(@RequestBody LocationInfoWS locationInfoWS) {
         logger.debug("Started [addLocation] rest call for user ID {}.", locationInfoWS.getUserId());
 
@@ -66,11 +73,11 @@ public class LocationController {
                 locationInfoWS.getDetails());
         locationDAO.save(location);
 
-        logger.debug("Completed [updateLocation] rest call for user ID {}.", locationInfoWS.getUserId());
+        logger.debug("Completed [addLocation] rest call for user ID {}.", locationInfoWS.getUserId());
     }
 
     /**
-     * Delete the lo
+     * Delete the location from the database.
      *
      * @param locationId    ID of the location to be deleted.
      */

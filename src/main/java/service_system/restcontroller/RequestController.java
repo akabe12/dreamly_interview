@@ -1,12 +1,12 @@
-package main.java.service_system.active_requests;
+package main.java.service_system.restcontroller;
 
 import main.java.service_system.common.Status;
 import main.java.service_system.common.hibernate.Request;
 import main.java.service_system.common.hibernate.RequestRecord;
 import main.java.service_system.common.hibernate.dao.RequestDAO;
 import main.java.service_system.common.hibernate.dao.RequestRecordDAO;
-import main.java.service_system.common.restservice.RequestInfoWS;
-import main.java.service_system.common.restservice.RequestListWS;
+import main.java.service_system.common.restservice.input.RequestInfoWS;
+import main.java.service_system.common.restservice.output.RequestListWS;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

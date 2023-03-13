@@ -1,4 +1,4 @@
-package main.java.service_system.common.restservice;
+package main.java.service_system.common.restservice.input;
 
 import java.time.Instant;
 

@@ -1,8 +1,8 @@
-package main.java.service_system.view_request;
+package main.java.service_system.restcontroller;
 
 import main.java.service_system.common.hibernate.RequestRecord;
 import main.java.service_system.common.hibernate.dao.RequestRecordDAO;
-import main.java.service_system.common.restservice.RequestRecordListWS;
+import main.java.service_system.common.restservice.output.RequestRecordListWS;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

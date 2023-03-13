@@ -1,4 +1,4 @@
-package main.java.service_system.common.restservice;
+package main.java.service_system.common.restservice.input;
 
 /**
  * Wrapper class that transfers the location input through the REST call to enter it into the database.

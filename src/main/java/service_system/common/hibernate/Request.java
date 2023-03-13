@@ -17,7 +17,7 @@ import java.time.Instant;
  * Created by skeane on 3/2/2023.
  */
 @Entity
-@Table (name = "requests")
+@Table (name = "request")
 public class Request {
 
     @Id

@@ -8,6 +8,4 @@
         <constructor-arg name="vehicleLimit" value="${max.number.of.vehicles}"/>
     </bean>
 
-
-
 </beans>

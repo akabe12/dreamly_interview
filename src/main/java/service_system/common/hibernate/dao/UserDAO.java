@@ -5,6 +5,11 @@ package main.java.service_system.common.hibernate.dao;
  */
 public interface UserDAO {
 
+    /**
+     * Delete the user from the database.
+     *
+     * @param userId    ID of the user.
+     */
     void delete(int userId);
 
     /**
@@ -14,4 +19,13 @@ public interface UserDAO {
      * @return          Hashed password of the account.
      */
     byte[] getPassword(int userId);
+
+    /**
+     * Replace the existing password with a new one.
+     *
+     * @param userId            ID of the user.
+     * @param hashedPassword    Hashed password to replace the original.
+     */
+    void setPassword(int userId, byte[] hashedPassword);
+
 }

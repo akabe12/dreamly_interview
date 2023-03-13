@@ -16,7 +16,7 @@ import javax.persistence.Table;
  * Created by skeane on 3/2/2023.
  */
 @Entity
-@Table(name = "vehicles")
+@Table(name = "vehicle")
 public class Vehicle {
 
     @Id

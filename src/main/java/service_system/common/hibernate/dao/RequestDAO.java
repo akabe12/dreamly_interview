@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by skeane on 3/2/2023.
  */
-public interface RequestDAO extends GenericDAO {
+public interface RequestDAO extends GenericDAO<Request> {
 
     /**
      * Get the request for a provided user.

@@ -44,7 +44,7 @@ public class RequestDAOImpl extends GenericDAOImpl implements RequestDAO {
      * {@inheritDoc}
      */
     @Override
-    public Object save(Object entity) {
+    public Request save(Request entity) {
         return null;
     }
 
@@ -52,7 +52,7 @@ public class RequestDAOImpl extends GenericDAOImpl implements RequestDAO {
      * {@inheritDoc}
      */
     @Override
-    public void delete(Object entity) {
+    public void delete(Request entity) {
 
     }
 
@@ -60,7 +60,7 @@ public class RequestDAOImpl extends GenericDAOImpl implements RequestDAO {
      * {@inheritDoc}
      */
     @Override
-    protected Class getEntityClass() {
+    public Request findById(Long id) {
         return null;
     }
 }

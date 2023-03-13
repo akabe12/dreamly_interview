@@ -3,6 +3,11 @@ package main.java.service_system.common.hibernate.dao.impl;
 import main.java.service_system.common.hibernate.Driver;
 import main.java.service_system.common.hibernate.dao.DriverDAO;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
@@ -14,32 +19,17 @@ public class DriverDAOImpl extends GenericDAOImpl implements DriverDAO {
      * {@inheritDoc}
      */
     @Override
-    public Object save(Object entity) {
-        return null;
-    }
+    public List<Driver> findByCompanyId(int companyId) {
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Driver> query = builder.createQuery(Driver.class);
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void delete(Object entity) {
+        Root<Driver> root = query.from(Driver.class);
+        query.where(builder.equal(Driver_.company_id, companyId));
+        query.select(Driver);
 
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected Class getEntityClass() {
-        return null;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public List<Driver> findByUserId(int companyId) {
-        return null;
+        TypedQuery<Driver> typedQuery = manager.createQuery(query);
+        return typedQuery.getResultList();
     }
 
     /**
@@ -47,6 +37,11 @@ public class DriverDAOImpl extends GenericDAOImpl implements DriverDAO {
      */
     @Override
     public void deleteById(int driverId) {
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Driver> query = builder.createQuery(Driver.class);
+
+
 
     }
 
@@ -55,6 +50,32 @@ public class DriverDAOImpl extends GenericDAOImpl implements DriverDAO {
      */
     @Override
     public void update() {
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Driver> query = builder.createQuery(Driver.class);
 
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Driver save(Driver entity) {
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Driver> query = builder.createQuery(Driver.class);
+
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void delete(Driver driver) {
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<Driver> query = builder.createQuery(Driver.class);
+    }
+
 }

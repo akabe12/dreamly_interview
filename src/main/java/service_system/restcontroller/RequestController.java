@@ -31,10 +31,7 @@ public class RequestController {
 
     private static final Logger logger = LoggerFactory.getLogger(RequestController.class);
 
-    @Autowired
     private RequestDAO requestDAO;
-
-    @Autowired
     private RequestRecordDAO requestRecordDAO;
 
     /**
@@ -160,4 +157,13 @@ public class RequestController {
         requestRecordDAO.save(record);
     }
 
+    @Autowired
+    public void setRequestDAO(RequestDAO requestDAO) {
+        this.requestDAO = requestDAO;
+    }
+
+    @Autowired
+    public void setRequestRecordDAO(RequestRecordDAO requestRecordDAO) {
+        this.requestRecordDAO = requestRecordDAO;
+    }
 }

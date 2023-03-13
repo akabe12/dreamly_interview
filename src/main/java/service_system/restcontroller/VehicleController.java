@@ -27,7 +27,6 @@ public class VehicleController {
 
     private static final Logger logger = LoggerFactory.getLogger(VehicleController.class);
 
-    @Autowired
     private VehicleDAO vehicleDAO;
 
     /**
@@ -53,7 +52,7 @@ public class VehicleController {
     public void updateVehicle(@RequestBody VehicleInfoWS vehicleInfoWS) {
         logger.debug("Started [updateVehicle] rest call for user ID {}.", vehicleInfoWS.getUserId());
 
-        vehicleDAO.update();
+        vehicleDAO.update(vehicleInfoWS);
 
         logger.debug("Completed [updateVehicle] rest call for user ID {}.", vehicleInfoWS.getUserId());
     }
@@ -89,5 +88,10 @@ public class VehicleController {
         vehicleDAO.deleteById(vehicleId);
 
         logger.debug("Completed [deleteVehicle] rest call for vehicle ID {}.", vehicleId);
+    }
+
+    @Autowired
+    public void setVehicleDAO(VehicleDAO vehicleDAO) {
+        this.vehicleDAO = vehicleDAO;
     }
 }

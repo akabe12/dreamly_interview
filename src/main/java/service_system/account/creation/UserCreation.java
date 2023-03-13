@@ -21,7 +21,7 @@ public class UserCreation {
      * @return
      */
     public boolean createUser() {
-
+        return true;
     }
 
 

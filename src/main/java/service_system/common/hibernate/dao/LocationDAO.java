@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by skeane on 3/2/2023.
  */
-public interface LocationDAO extends GenericDAO{
+public interface LocationDAO extends GenericDAO<Location> {
 
     /**
      * Gets all locations associated with the user.

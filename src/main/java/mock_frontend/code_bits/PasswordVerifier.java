@@ -1,4 +1,4 @@
-package main.java.service_system.account.security;
+package main.java.mock_frontend.code_bits;
 
 import main.java.service_system.common.hibernate.dao.UserDAO;
 import org.slf4j.Logger;
@@ -12,6 +12,8 @@ import java.security.spec.KeySpec;
 import java.util.Arrays;
 
 /**
+ * TODO: CODE WAS MOVED OUT OF BACKEND, CAN BE RE-USED IN FRONTEND BEFORE PASSWORD IS PASSED TO BACKEND IN REST CALL.
+ *
  * Class takes a submitted password and compares it with the user's hashed password stored in the database.
  *
  * The password hashing function that will be used for this application is the PBKDF2 method as it is natively supported
@@ -78,10 +80,5 @@ public class PasswordVerifier {
             logger.error("Failure occurred generating the hash for String {} with algorithm {}", input, HASH_ALG, ex);
             return new byte[0];
         }
-    }
-
-    @Autowired      // TODO: Need to create context files that can autowire the DAO dependency to the class.
-    public void setUserDAO(UserDAO userDAO) {
-        this.userDAO = userDAO;
     }
 }

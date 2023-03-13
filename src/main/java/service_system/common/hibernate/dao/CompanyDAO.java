@@ -1,9 +1,11 @@
 package main.java.service_system.common.hibernate.dao;
 
+import main.java.service_system.common.hibernate.Company;
+
 /**
  * Created by skeane on 3/2/2023.
  */
-public interface CompanyDAO extends GenericDAO {
+public interface CompanyDAO extends GenericDAO<Company> {
 
     /**
      * Get the hashed password for a company from the database.

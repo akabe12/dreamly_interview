@@ -27,7 +27,6 @@ public class DriverController {
 
     private static final Logger logger = LoggerFactory.getLogger(DriverController.class);
 
-    @Autowired
     private DriverDAO driverDAO;
 
     /**
@@ -84,4 +83,8 @@ public class DriverController {
         logger.debug("Completed [deleteDriver] rest call for driver ID {}.", driverId);
     }
 
+    @Autowired
+    public void setDriverDAO(DriverDAO driverDAO) {
+        this.driverDAO = driverDAO;
+    }
 }

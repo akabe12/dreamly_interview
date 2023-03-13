@@ -24,7 +24,6 @@ public class ViewRequestController {
 
     private static final Logger logger = LoggerFactory.getLogger(ViewRequestController.class);
 
-    @Autowired
     private RequestRecordDAO requestRecordDAO;
 
     /**
@@ -55,5 +54,10 @@ public class ViewRequestController {
         List<RequestRecord> dbRecords = requestRecordDAO.getCompanyRecords(companyId);
 
         return new RequestRecordListWS(dbRecords);
+    }
+
+    @Autowired
+    public void setRequestRecordDAO(RequestRecordDAO requestRecordDAO) {
+        this.requestRecordDAO = requestRecordDAO;
     }
 }

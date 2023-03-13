@@ -1,13 +1,14 @@
 package main.java.service_system.common.hibernate.dao;
 
 import main.java.service_system.common.hibernate.Vehicle;
+import main.java.service_system.common.restservice.input.VehicleInfoWS;
 
 import java.util.List;
 
 /**
  * Created by skeane on 3/2/2023.
  */
-public interface VehicleDAO extends GenericDAO {
+public interface VehicleDAO extends GenericDAO<Vehicle> {
 
     /**
      * Get all the vehicles for a provided user.
@@ -18,10 +19,11 @@ public interface VehicleDAO extends GenericDAO {
     List<Vehicle> findByUserId(int userId);
 
     /**
+     * Updates the non-null fields in the wrapper object in the vehicle object stored in the database.
      *
-     * @param vehicle
+     * @param vehicleInfoWS     Vehicle information wrapper object.
      */
-    void update(Vehicle vehicle);
+    void update(VehicleInfoWS vehicleInfoWS);
 
     /**
      * Delete the vehicle by the provided ID.

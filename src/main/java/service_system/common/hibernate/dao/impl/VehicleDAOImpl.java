@@ -5,13 +5,40 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import main.java.service_system.common.hibernate.Vehicle;
 import main.java.service_system.common.hibernate.dao.VehicleDAO;
+import main.java.service_system.common.restservice.input.VehicleInfoWS;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 /**
  * Created by skeane on 3/2/2023.
  */
 public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<Vehicle> findByUserId(int userId) {
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void update(VehicleInfoWS vehicleInfoWS) {
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void deleteById(int vehicleId) {
+
+    }
 
     /**
      * {@inheritDoc}
@@ -47,6 +74,9 @@ public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
         return count;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public void help() {
         EntityManager manager = getEntityManager()
         CriteriaBuilder cb = session.getCriteriaBuilder();
@@ -58,18 +88,28 @@ public class VehicleDAOImpl extends GenericDAOImpl implements VehicleDAO {
         List<Item> results = query.getResultList();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public Object save(Object entity) {
+    public Vehicle save(Vehicle entity) {
         return null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public void delete(Object entity) {
+    public void delete(Vehicle entity) {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    protected Class getEntityClass() {
+    public Vehicle findById(Long id) {
         return null;
     }
 }

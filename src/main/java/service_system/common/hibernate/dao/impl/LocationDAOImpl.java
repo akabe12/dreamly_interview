@@ -30,7 +30,15 @@ public class LocationDAOImpl extends GenericDAOImpl implements LocationDAO {
      * {@inheritDoc}
      */
     @Override
-    public Object save(Object entity) {
+    public void update() {
+
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Location save(Location entity) {
         return null;
     }
 
@@ -38,7 +46,7 @@ public class LocationDAOImpl extends GenericDAOImpl implements LocationDAO {
      * {@inheritDoc}
      */
     @Override
-    public void delete(Object entity) {
+    public void delete(Location entity) {
 
     }
 
@@ -46,7 +54,7 @@ public class LocationDAOImpl extends GenericDAOImpl implements LocationDAO {
      * {@inheritDoc}
      */
     @Override
-    protected Class getEntityClass() {
+    public Location findById(Long id) {
         return null;
     }
 }

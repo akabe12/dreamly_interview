@@ -27,7 +27,6 @@ public class LocationController {
 
     private static final Logger logger = LoggerFactory.getLogger(LocationController.class);
 
-    @Autowired
     private LocationDAO locationDAO;
 
     /**
@@ -88,5 +87,10 @@ public class LocationController {
         locationDAO.deleteById(locationId);
 
         logger.debug("Completed [deleteLocation] rest call for location ID {}.", locationId);
+    }
+
+    @Autowired
+    public void setLocationDAO(LocationDAO locationDAO) {
+        this.locationDAO = locationDAO;
     }
 }

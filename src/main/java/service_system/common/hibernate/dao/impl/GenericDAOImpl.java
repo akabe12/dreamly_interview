@@ -3,13 +3,13 @@ package main.java.service_system.common.hibernate.dao.impl;
 import java.io.Serializable;
 import java.util.List;
 
-import service_system.hibernate.dao.GenericDAO;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import main.java.service_system.common.hibernate.dao.GenericDAO;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 
 /**
  * Created by skeane on 3/3/2023.
@@ -17,37 +17,44 @@ import javax.persistence.EntityManager;
 @Repository
 public abstract class GenericDAOImpl<T extends Serializable> implements GenericDAO<T> {
 
-    @Autowired
-    private SessionFactory sessionFactory;
+    private Class<T> clazz;
 
-    protected Session getSession() {
-        return sessionFactory.getCurrentSession();
+    @PersistenceContext(unitName = "entityManagerFactory")
+    private EntityManager entityManager;
+
+    public final void setClazz(final Class<T> clazzToSet) {
+        this.clazz = clazzToSet;
     }
 
-    protected abstract Class<T> getEntityClass();
-
-    public EntityManager getEntityManager() {
-        return
+    public T findOne(final long id) {
+        return entityManager.find(clazz, id);
     }
 
-    @Override
-    public T save(T entity) {
-        getSession().saveOrUpdate(entity);
+    @SuppressWarnings("unchecked")
+    public List<T> findAll() {
+        return entityManager.createQuery("from " + clazz.getName()).getResultList();
+    }
+
+    public T create(final T entity) {
+        entityManager.persist(entity);
         return entity;
     }
 
-    @Override
-    public void delete(T entity) {
-        getSession().delete(entity);
+    public T update(final T entity) {
+        return entityManager.merge(entity);
     }
 
-    @Override
-    public T findById(Long id) {
-        return getSession().get(getEntityClass(), id);
+    public void delete(final T entity) {
+        entityManager.remove(entity);
     }
 
-    @Override
-    public List<T> findAll() {
-        return getSession().createQuery("from " + getEntityClass().getName(), getEntityClass()).list();
+    public void deleteById(final long entityId) {
+        final T entity = findOne(entityId);
+        delete(entity);
+    }
+
+    protected EntityManager getEntityManager() {
+        EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Eclipselink_JPA" );
+        EntityManager entitymanager = emfactory.createEntityManager( );
     }
 }

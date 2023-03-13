@@ -24,10 +24,7 @@ public class PasswordController {
 
     private static final Logger logger = LoggerFactory.getLogger(PasswordController.class);
 
-    @Autowired
     private UserDAO userDAO;
-
-    @Autowired
     private CompanyDAO companyDAO;
 
     /**
@@ -90,4 +87,13 @@ public class PasswordController {
         logger.debug("Started [resetCompanyPassword] rest call for company Id {}", companyId);
     }
 
+    @Autowired
+    public void setUserDAO(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
+
+    @Autowired
+    public void setCompanyDAO(CompanyDAO companyDAO) {
+        this.companyDAO = companyDAO;
+    }
 }

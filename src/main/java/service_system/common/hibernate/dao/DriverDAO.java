@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by skeane on 3/2/2023.
  */
-public interface DriverDAO extends GenericDAO {
+public interface DriverDAO extends GenericDAO<Driver> {
 
     /**
      * Gets all drivers associated with the company.
@@ -28,4 +28,6 @@ public interface DriverDAO extends GenericDAO {
      *
      */
     void update();
+
+    Driver save(Driver driver);
 }

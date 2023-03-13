@@ -53,7 +53,7 @@ public class RequestRecordDAOImpl extends GenericDAOImpl implements RequestRecor
      * {@inheritDoc}
      */
     @Override
-    public Object save(Object entity) {
+    public RequestRecord save(RequestRecord entity) {
         return null;
     }
 
@@ -61,7 +61,7 @@ public class RequestRecordDAOImpl extends GenericDAOImpl implements RequestRecor
      * {@inheritDoc}
      */
     @Override
-    public void delete(Object entity) {
+    public void delete(RequestRecord entity) {
 
     }
 
@@ -69,7 +69,7 @@ public class RequestRecordDAOImpl extends GenericDAOImpl implements RequestRecor
      * {@inheritDoc}
      */
     @Override
-    protected Class getEntityClass() {
+    public RequestRecord findById(Long id) {
         return null;
     }
 }

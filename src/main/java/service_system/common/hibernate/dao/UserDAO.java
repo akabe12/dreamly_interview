@@ -1,9 +1,11 @@
 package main.java.service_system.common.hibernate.dao;
 
+import main.java.service_system.common.hibernate.User;
+
 /**
  * Created by skeane on 3/2/2023.
  */
-public interface UserDAO {
+public interface UserDAO extends GenericDAO<User> {
 
     /**
      * Delete the user from the database.

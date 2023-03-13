@@ -4,7 +4,7 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import main.java.service_system.account.security.PasswordVerifier;
+import main.java.mock_frontend.code_bits.PasswordVerifier;
 import main.java.service_system.common.hibernate.dao.UserDAO;
 
 import static org.junit.Assert.*;

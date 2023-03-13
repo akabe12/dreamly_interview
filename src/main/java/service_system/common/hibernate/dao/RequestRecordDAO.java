@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by skeane on 3/2/2023.
  */
-public interface RequestRecordDAO extends GenericDAO {
+public interface RequestRecordDAO extends GenericDAO<RequestRecord> {
 
     /**
      * Removes the user ID from any request records that are in the database. If the request record does not have an

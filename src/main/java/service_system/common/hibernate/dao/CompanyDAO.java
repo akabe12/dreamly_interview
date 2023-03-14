@@ -8,10 +8,18 @@ import main.java.service_system.common.hibernate.Company;
 public interface CompanyDAO extends GenericDAO<Company> {
 
     /**
+     * Find the ID of the company with the matching account username;
+     *
+     * @param username      Username of the company account.
+     * @return              ID of a matching company, null if nothing was found.
+     */
+    Integer findIdByUsername(String username);
+
+    /**
      * Get the hashed password for a company from the database.
      *
      * @param companyId     ID of the company.
-     * @return              Hashed password.
+     * @return              Hashed password, empty array if nothing is found.
      */
     byte[] getPassword(int companyId);
 

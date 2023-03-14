@@ -17,6 +17,19 @@ public class UserDAOImpl extends GenericDAOImpl<User> implements UserDAO {
     /**
      * {@inheritDoc}
      */
+    @Override
+    public Integer findIdByUsername(String username) {
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<String> cQuery = builder.createQuery(String.class);
+
+        return null;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public byte[] getPassword(int userId) {
         EntityManager manager = getEntityManager();
         CriteriaBuilder builder = manager.getCriteriaBuilder();

@@ -53,7 +53,7 @@ public class User implements Serializable {
     private String email;
 
     /**
-     * Constructor for a user. Only used in initial creation of a user acount.
+     * Constructor for a user. Only used in initial creation of a user account.
      *
      * @param username      Username of the account.
      * @param password      Hashed password of the account.

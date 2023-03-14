@@ -8,6 +8,14 @@ import main.java.service_system.common.hibernate.User;
 public interface UserDAO extends GenericDAO<User> {
 
     /**
+     * Find the ID of the user with the matching account username;
+     *
+     * @param username      Username of the user account.
+     * @return              ID of a matching user, null if nothing was found.
+     */
+    Integer findIdByUsername(String username);
+
+    /**
      * Delete the user from the database.
      *
      * @param userId    ID of the user.

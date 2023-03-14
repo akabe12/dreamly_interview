@@ -20,12 +20,24 @@ public class CompanyDAOImpl extends GenericDAOImpl<Company> implements CompanyDA
      * {@inheritDoc}
      */
     @Override
+    public Integer findIdByUsername(String username) {
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaQuery<String> cQuery = builder.createQuery(String.class);
+
+        return null;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public byte[] getPassword(int companyId) {
         EntityManager manager = getEntityManager();
         CriteriaBuilder builder = manager.getCriteriaBuilder();
         //CriteriaQuery<byte[]> query = builder.createQuery(byte[]);
 
-return new byte[0];
+        return new byte[0];
     }
 
     /**

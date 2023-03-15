@@ -37,7 +37,7 @@ public interface VehicleDAO extends GenericDAO<Vehicle> {
      *
      * @param userId    ID of the user to delete all vehicles for.
      */
-    void deleteUser(int userId);
+    void deleteByUserId(int userId);
 
     /**
      * Deletes the vehicle information from the database.

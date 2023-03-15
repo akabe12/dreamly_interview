@@ -40,7 +40,7 @@ public class VehicleDAOImpl extends GenericDAOImpl<Vehicle> implements VehicleDA
      * {@inheritDoc}
      */
     @Override
-    public void deleteById(int vehicleId) {
+    public void deleteByUserId(int vehicleId) {
         EntityManager manager = getEntityManager();
         CriteriaBuilder builder = manager.getCriteriaBuilder();
         CriteriaQuery<Vehicle> query = builder.createQuery(Vehicle.class);
@@ -50,7 +50,7 @@ public class VehicleDAOImpl extends GenericDAOImpl<Vehicle> implements VehicleDA
      * {@inheritDoc}
      */
     @Override
-    public void deleteUser(int userId) {
+    public void deleteById(int userId) {
         EntityManager manager = getEntityManager();
         CriteriaBuilder builder = manager.getCriteriaBuilder();
         CriteriaQuery<Vehicle> query = builder.createQuery(Vehicle.class);

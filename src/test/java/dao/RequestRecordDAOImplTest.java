@@ -1,27 +1,30 @@
-package test.dao;
+package test.java.dao;
 
 import junit.framework.TestCase;
 import main.java.service_system.common.hibernate.RequestRecord;
 import main.java.service_system.common.hibernate.dao.RequestRecordDAO;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
+import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * Unit testing the Request Record database queries.
+ * Tests database queries for the "record" table using an in-memory H2 database.
  *
  * Created by skeane on 3/3/2023.
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "../../resources/test-context.xml")
 public class RequestRecordDAOImplTest extends TestCase {
 
-    @Mock
+    @Autowired
     private RequestRecordDAO requestRecordDAO;
 
     @Before
     private void init() {
-        MockitoAnnotations.initMocks(this);
-
         RequestRecord record1 = createRecord();
         RequestRecord record2 = createRecord();
         RequestRecord record3 = createRecord();

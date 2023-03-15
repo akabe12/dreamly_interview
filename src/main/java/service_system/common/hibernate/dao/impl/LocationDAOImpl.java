@@ -63,4 +63,23 @@ public class LocationDAOImpl extends GenericDAOImpl<Location> implements Locatio
         logger.debug("Location {} was removed from the database.", locationId);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void deleteByUserId(int userId) {
+        EntityManager manager = getEntityManager();
+        CriteriaBuilder builder = manager.getCriteriaBuilder();
+        CriteriaDelete<Location> delete = builder.createCriteriaDelete(Location.class);
+
+        Root<Location> root = delete.from(Location.class);
+        delete.where(builder.equal(root.get("user_id"), userId));
+
+        manager.getTransaction().begin();
+        manager.createQuery(delete).executeUpdate();
+        manager.getTransaction().commit();
+
+        logger.debug("Locations related to user {} have been removed from the database.", userId);
+    }
+
 }

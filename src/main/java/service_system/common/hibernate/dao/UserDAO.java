@@ -38,4 +38,12 @@ public interface UserDAO extends GenericDAO<User> {
      */
     void setPassword(int userId, byte[] hashedPassword);
 
+    /**
+     * Find the ID by the email address.
+     *
+     * @param email     Email address of a user.
+     * @return          ID of the user's account, null if no matching account was found.
+     */
+    Integer findByEmail(String email);
+
 }

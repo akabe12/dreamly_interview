@@ -25,4 +25,11 @@ public interface LocationDAO extends GenericDAO<Location> {
      * @param locationId    ID of the location to be removed.
      */
     void deleteById(int locationId);
+
+    /**
+     * Deletes all locations from the database associated to the provided user ID.
+     *
+     * @param userId    ID of the user who created the location.
+     */
+    void deleteByUserId(int userId);
 }

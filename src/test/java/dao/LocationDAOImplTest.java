@@ -1,4 +1,4 @@
-package test.dao;
+package test.java.dao;
 
 import junit.framework.TestCase;
 import main.java.service_system.common.hibernate.Location;
@@ -18,7 +18,7 @@ import java.util.List;
  * Created by skeane on 3/3/2023.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "../resources/test-context.xml")
+@ContextConfiguration(locations = "../../resources/test-context.xml")
 public class LocationDAOImplTest extends TestCase {
 
     @Autowired
